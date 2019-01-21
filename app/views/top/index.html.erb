@@ -1,0 +1,62 @@
+<style>
+  .facebook-lg {
+     width: 35px;
+     height: 35px;
+     margin: 10px;
+     box-shadow: 2px 2px 4px lightgray;
+  }
+
+  .searchform{
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px gray;
+  }
+
+  .searchform-style {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .buttons {
+    margin: 10px;
+    box-shadow: 2px 2px 4px gray;
+    font-family: Verdana;
+    text-shadow: 1px 1px 2px lightgray;
+  }
+
+  .user_name {
+    color: white;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px gray;
+    font-family: Comic Sans MS;
+  }
+</style>
+<div class="container searchform-style">
+  <%= search_form_for @search do |f| %>
+    <%= f.text_field :name_cont, class: "searchform" %>
+    <span style="box-shadow: 2px 2px 4px;">
+      <%= f.submit %>
+    </span>
+  <% end %>
+  <% if @user_name %>
+    <div class="container user_name">
+      <%= @user_name.name %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="container" style="text-align: center;">
+  <% if @user_name %>
+    <%= link_to 'My Favorites', user_path, class: "btn btn-light btn-sm buttons" %>
+    <%= link_to 'New Knowledge', new_food_path, class: "btn btn-light btn-sm buttons" %>
+  <% end %>
+  <% unless @user_name %>
+    <%= link_to '/auth/facebook' do %>
+      <%= image_tag '/facebook-logo.png', class: "facebook-lg" %>
+    <% end %>
+  <% else %>
+    <%= link_to 'logout', root_path, method: :delete, class: "btn btn-light btn-sm buttons" %>
+  <% end %>
+</div>

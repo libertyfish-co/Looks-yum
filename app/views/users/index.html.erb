@@ -1,0 +1,117 @@
+<style>
+.content_part {
+  width: 45%;
+  margin-top: 20px;
+}
+
+.CatchPhrase_part {
+  color: dimgray;
+  background-color: lightyellow;
+  text-decoration: underline;
+  font-weight: bolder;
+  font-family: Verdana;
+  font-size: 140%;
+  text-shadow: 2px 2px 4px lightgray;
+}
+
+.favorite_part {
+  float: right;
+}
+
+.no_favorite {
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 2px 2px 4px gray;
+}
+
+.favorite_part_color {
+  color: orange;
+}
+
+.image_part {
+  width: 40%;
+  margin: 0;
+  float: left;
+  margin: 5%;
+  border-radius: ;
+  box-shadow: 1px 1px 2px black;
+}
+
+/* .image_size {
+    display: inline-block;
+    height: 100%;
+} */
+
+.point_part {
+  margin-top:  20px;
+  margin-left: 30px;
+  font-size: midium;
+  font-weight: bold;
+  color: dimgray;
+  text-shadow: 2px 2px 4px lightgray;
+}
+
+.description_part {
+  color: dimgray;
+  float: left;
+  font-size: small;
+  font-family: Verdana;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px lightgray;
+}
+</style>
+<% unless @favorites.empty? %>
+<div class="container content_part">
+  <ul class="bxslider">
+    <% @favorites.each do |favorite| %>
+      <li>
+        <div class="container CatchPhrase_part">
+          <%= favorite.name %>
+          <div class="favorite_part">
+            <%= link_to favorite_path(favorite), remote: true, method: :delete, class: "favorite" do %>
+              <i class="fas fa-star" style="color: orange;"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="container" style="display: inline-block;">
+          <span class="image_size image_part"><%= image_tag favorite.image %></span>
+          <div style="float: left;">
+            <% favorite.points.each do |point| %>
+            <div class="point_part">
+              <i class="fas fa-caret-right fa-1x" style="color: orange;"></i>
+              <%= point.point %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="container">
+          <div class="container description_part">
+            <%= favorite.description %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4 class="no_favorite">There is no favorites.</h4>
+<% end %>
+</div>
+
+<!-- slide show  -bxSlider- -->
+<script>
+jQuery(document).ready(function() {
+  jQuery('.bxslider').bxSlider({
+    speed: 1000,        // スライドするスピード
+    moveSlides: 1,      // 移動するスライド数
+    slideWidth: 1000,   // 各スライドの幅
+    infiniteLoop: true, // スライドをループさせるかどうか
+    responsive: true,   // レスポンシブ対応
+  })
+
+  jQuery('.favorite').on('ajax:success', function() {
+    window.location.reload()
+  })
+})
+</script>

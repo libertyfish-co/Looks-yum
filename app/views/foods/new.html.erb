@@ -1,0 +1,160 @@
+<style>
+
+.selected {
+  background-color: yellow;
+}
+
+.form-control-sm {
+  border-width: 1px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CatchPhrase_part {
+  color: darkgray;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: -5px;
+  font-weight: bolder;
+  font-size: 140%;
+  font-family: Verdana;
+  text-align: left;
+  text-shadow: 1px 1px 2px lightgray;
+}
+
+.points_part {
+  color: darkgray;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-bottom: -5px;
+  font-weight: bolder;
+  font-size: 140%;
+  font-family: Verdana;
+  text-align: left;
+  text-shadow: 1px 1px 2px lightgray;
+}
+
+.point {
+  font-size: 12px;
+  color: dimgray;
+  font-family: Verdana;
+  text-shadow: 1px 1px 2px lightgray;
+  border: double lightgray;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px;
+}
+
+.note_part {
+  color: darkgray;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-bottom: -5px;
+  font-weight: bolder;
+  font-size: 140%;
+  font-family: Verdana;
+  text-align: left;
+  text-shadow: 1px 1px 2px lightgray;
+}
+
+.image_part {
+  color: darkgray;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-bottom: -5px;
+  font-weight: bolder;
+  font-size: 140%;
+  font-family: Verdana;
+  text-align: left;
+  text-shadow: 1px 1px 2px lightgray;
+}
+
+.submit_part {
+  color: gray;
+  margin-top:10px;
+  margin-right: 35px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  box-shadow: 1px 1px 2px;
+  font-weight: lighter;
+  font-size: 100%;
+  font-family: Verdana;
+  border: outset white;
+}
+
+.content_frame {
+  background: white;
+  border-radius: 50px;
+}
+
+.error_messages {
+  color: red;
+  margin-left: 20px;
+}
+</style>
+
+<div class="container content_frame" style="width: 35%; margin-top: 20px; box-shadow: 2px 2px 4px black;">
+<%= form_for @food do |f| %>
+  <div class="container">
+    <%= f.label :name, 'catch phrase', class: "CatchPhrase_part" %>
+    <%= f.text_field :name, class: "form-control form-control-sm" %>
+    <div class="error_messages"><%= @food.errors.full_messages_for(:name).inject %></div>
+  </div>
+  <div class="container" style="text-align: center; margin-top: 10px;">
+    <div class="points_part" style="text-align: left">points</div>
+    <div class="error_messages" style="text-align: left;"><%= @food.errors[:point].inject %></div>
+    <div class="row" style="margin-right: 15px; margin-left: 15px;">
+    <% @point.each_with_index do |point, index| %>
+        <div class="point_list col-sm-4">
+          <div class="point" style="margin-bottom: 5px; margin-top: 5px; margin-left: -10px; margin-right: -10px;" id="<%= point.id %>"><%= point.point %></div>
+        </div>
+    <% end %>
+    </div>
+  </div>
+    <div class="container">
+      <%= f.label :description, 'note', class: "note_part" %>
+      <%= f.text_area :description, class: "form-control form-control-sm" %>
+      <div class="error_messages"><%= @food.errors.full_messages_for(:description).inject %></div>
+    </div>
+    <div class="container">
+      <%= f.label :image, 'image', class: "image_part" %>
+      <div style="margin-left: 25px">
+        <%= f.file_field :image %>
+      </div>
+      <div class="error_messages"><%= @food.errors.full_messages_for(:image).inject %></div>
+    </div>
+    <div style="text-align: right;">
+      <%= f.submit 'submit', class: "submit_part" %>
+    </div>
+<% end %>
+</div>
+<script>
+  var selected_points = new Array() //選択したポイントを格納
+  var point_id // 選択したポイントのidを格納
+  var input_string // inputタグ生成
+
+  $('.point_list').on('click', 'div', function() {
+    if($(this).hasClass('selected')) {
+      $(this).removeClass('selected')
+      point_id = $(this).attr('id')
+      $('input#' + 'point-' + point_id).remove()
+      var delete_point = $(this).text()
+      selected_points = selected_points.filter(function(point){
+        return point !== delete_point
+      })
+    }else{
+      if(selected_points.length < 3) {
+        selected_points.push($(this).text())
+        $(this).addClass('selected')
+        point_id = $(this).attr('id')
+        input_string = '<input id="point-' + point_id + '" type="hidden" name="point[][id]" value="' + point_id + '"/>'
+        $('form').append(input_string)
+      }else{
+        alert('登録出来るポイントは３つまでです')
+      }
+    }
+  })
+</script>
