@@ -1,7 +1,6 @@
-# README
+# Looks Yum - 美味しい野菜の見分け方
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+食材の選択をする際に、どういうポイントに注視すると「上質な食材」を見分けられるのか、を情報集約するアプリケーションです。
 
 Things you may want to cover:
 
