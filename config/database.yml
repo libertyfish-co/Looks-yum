@@ -14,12 +14,14 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: password
+  # password: password
   # host: db
   host: localhost
 
 development:
   <<: *default
+  username: dev_user
+  password: P@ssw0rd
   database: app_development
 
 # Warning: The database defined as "test" will be erased and
