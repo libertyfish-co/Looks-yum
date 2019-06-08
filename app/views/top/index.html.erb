@@ -53,7 +53,7 @@
     <%= link_to 'New Knowledge', new_food_path, class: "btn btn-light btn-sm buttons" %>
   <% end %>
   <% unless @user_name %>
-    <%= link_to '/auth/facebook' do %>
+    <%= link_to login_path do %>
       <%= image_tag '/facebook-logo.png', class: "facebook-lg" %>
     <% end %>
   <% else %>
