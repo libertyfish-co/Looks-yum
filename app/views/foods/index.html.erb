@@ -91,7 +91,11 @@
           </div>
         </div>
         <div class="container" style="display: inline-block;">
-          <span class="image_part"><%= image_tag food.image, class: "image_size" %></span>
+          <span class="image_part">
+            <% if food.image.attached? %>
+              <%= image_tag food.image, class: "image_size" %>
+            <% end %>
+          </span>
           <div style="float: left;">
             <h5 class="how_to_title">美味しい<%= food.name %>の選び方!!</h5>
             <% food.points.each do |point| %>
