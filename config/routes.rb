@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/user', to: 'users#index'
   get '/auth/facebook/callback', to: 'facebook#auth_done'
   delete '/', to: 'sessions#destroy'
+  get '/login', to: 'users#auth_done'
 end
