@@ -6,6 +6,8 @@ services:
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
+    environment:
+      MYSQL_ROOT_PASSWORD: password
     ports:
       - 3001:3001
     depends_on:
