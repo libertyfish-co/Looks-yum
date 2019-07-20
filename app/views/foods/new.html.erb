@@ -88,6 +88,10 @@
 .content_frame {
   background: white;
   border-radius: 50px;
+  width: 35%; 
+  margin-top: 20px;
+  box-shadow: 2px 2px 4px black;
+  margin-bottom: 20px;
 }
 
 .error_messages {
@@ -96,7 +100,7 @@
 }
 </style>
 
-<div class="container content_frame" style="width: 35%; margin-top: 20px; box-shadow: 2px 2px 4px black;">
+<div class="container content_frame">
 <%= form_for @food do |f| %>
   <div class="container">
     <%= f.label :name, 'catch phrase', class: "CatchPhrase_part" %>
