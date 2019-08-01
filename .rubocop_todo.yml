@@ -14,12 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth-facebook.rb'
 
-# Offense count: 14
-# Cop supports --auto-correct.
-Layout/CommentIndentation:
-  Exclude:
-    - 'db/seeds.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowBorderComment, AllowMarginComment.
@@ -62,13 +56,6 @@ Layout/IndentationWidth:
     - 'app/models/food_point.rb'
     - 'app/models/point.rb'
     - 'app/models/user.rb'
-    - 'db/seeds.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowDoxygenCommentStyle.
-Layout/LeadingCommentSpace:
-  Exclude:
     - 'db/seeds.rb'
 
 # Offense count: 1
