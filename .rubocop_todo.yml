@@ -16,13 +16,6 @@ Layout/AlignArguments:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: AllowBorderComment, AllowMarginComment.
-Layout/EmptyComment:
-  Exclude:
-    - 'spec/rails_helper.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Layout/EmptyLines:
   Exclude:
     - 'db/seeds.rb'
