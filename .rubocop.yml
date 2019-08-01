@@ -2,6 +2,15 @@ require: rubocop-rails
 
 inherit_from: .rubocop_todo.yml
 
+# 自動生成されるファイルはチェック対象から除外
+AllCops:
+  Exclude:
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - db/schema.rb
+
 # マルチバイトのコメントを許可する
 Style/AsciiComments:
   Enabled: false
