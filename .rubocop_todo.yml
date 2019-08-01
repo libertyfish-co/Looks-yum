@@ -20,15 +20,6 @@ Layout/EmptyLines:
   Exclude:
     - 'db/seeds.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'db/schema.rb'
-    - 'spec/system/validation_spec.rb'
-
 # Offense count: 28
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.

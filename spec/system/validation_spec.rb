@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'validation test', type: :system do
-
   context '野菜登録時バリデーションエラーメッセージが表示されること' do
     describe 'name入力フォーム' do
       it '空の場合' do
