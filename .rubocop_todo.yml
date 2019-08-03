@@ -98,16 +98,6 @@ Style/ExpandPathArguments:
     - 'bin/rspec'
     - 'spec/rails_helper.rb'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  Exclude:
-    - 'app/models/food.rb'
-    - 'app/models/point.rb'
-    - 'app/models/user.rb'
-
 # Offense count: 2
 Style/MixinUsage:
   Exclude:
