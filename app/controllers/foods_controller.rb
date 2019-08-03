@@ -5,12 +5,8 @@ class FoodsController < ApplicationController
     @search = Food.ransack params[:q]
     @result = @search.result
 
-    if @result.blank?
-      redirect_to root_path
-    end
-    if session[:user_id]
-      @users_favorite = Favorite.where(user_id: session[:user_id])
-    end
+    redirect_to root_path if @result.blank?
+    @users_favorite = Favorite.where(user_id: session[:user_id]) if session[:user_id]
   end
 
   def new

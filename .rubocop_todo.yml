@@ -98,14 +98,6 @@ Style/ExpandPathArguments:
     - 'bin/rspec'
     - 'spec/rails_helper.rb'
 
-# Offense count: 3
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/favorites_controller.rb'
-    - 'app/controllers/foods_controller.rb'
-    - 'app/controllers/top_controller.rb'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
@@ -115,14 +107,6 @@ Style/HashSyntax:
     - 'app/models/food.rb'
     - 'app/models/point.rb'
     - 'app/models/user.rb'
-
-# Offense count: 4
-# Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/controllers/favorites_controller.rb'
-    - 'app/controllers/foods_controller.rb'
-    - 'app/controllers/top_controller.rb'
 
 # Offense count: 2
 Style/MixinUsage:

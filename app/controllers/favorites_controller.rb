@@ -2,9 +2,7 @@
 
 class FavoritesController < ApplicationController
   def create
-    unless find_favorite
-      Favorite.create(user_id: session[:user_id], food_id: params[:id])
-    end
+    Favorite.create(user_id: session[:user_id], food_id: params[:id]) unless find_favorite
   end
 
   def destroy
