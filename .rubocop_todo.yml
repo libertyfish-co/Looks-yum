@@ -12,7 +12,7 @@
 # SupportedStyles: with_first_argument, with_fixed_indentation
 Layout/AlignArguments:
   Exclude:
-    - 'config/initializers/omniauth-facebook.rb'
+    - 'config/initializers/omniauth_facebook.rb'
 
 # Offense count: 2
 Metrics/AbcSize:
@@ -28,13 +28,6 @@ Metrics/BlockLength:
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
   Max: 18
-
-# Offense count: 1
-# Configuration parameters: ExpectMatchingDefinition, Regex, IgnoreExecutableScripts, AllowedAcronyms.
-# AllowedAcronyms: CLI, DSL, ACL, API, ASCII, CPU, CSS, DNS, EOF, GUID, HTML, HTTP, HTTPS, ID, IP, JSON, LHS, QPS, RAM, RHS, RPC, SLA, SMTP, SQL, SSH, TCP, TLS, TTL, UDP, UI, UID, UUID, URI, URL, UTF8, VM, XML, XMPP, XSRF, XSS
-Naming/FileName:
-  Exclude:
-    - 'config/initializers/omniauth-facebook.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -177,7 +170,7 @@ Style/FrozenStringLiteralComment:
     - 'config/initializers/filter_parameter_logging.rb'
     - 'config/initializers/inflections.rb'
     - 'config/initializers/mime_types.rb'
-    - 'config/initializers/omniauth-facebook.rb'
+    - 'config/initializers/omniauth_facebook.rb'
     - 'config/initializers/wrap_parameters.rb'
     - 'config/puma.rb'
     - 'config/routes.rb'
@@ -282,7 +275,7 @@ Style/StringLiterals:
     - 'bin/yarn'
     - 'config/application.rb'
     - 'config/environments/production.rb'
-    - 'config/initializers/omniauth-facebook.rb'
+    - 'config/initializers/omniauth_facebook.rb'
     - 'config/puma.rb'
     - 'db/migrate/20190109055009_create_active_storage_tables.active_storage.rb'
     - 'db/schema.rb'
