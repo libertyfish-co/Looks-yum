@@ -36,9 +36,8 @@ environment ENV.fetch('RAILS_ENV') { 'development' }
 plugin :tmp_restart
 
 if 'development' == ENV.fetch('RAILS_ENV') { 'development' }
-  ssl_bind '0.0.0.0', '3001', {
-    key: './server.key',
-    cert: './server.crt',
-    verify_mode: 'none'
-  }
+  ssl_bind '0.0.0.0', '3001',
+           key: './server.key',
+           cert: './server.crt',
+           verify_mode: 'none'
 end
