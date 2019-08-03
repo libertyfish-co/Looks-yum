@@ -14,12 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth-facebook.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'db/seeds.rb'
-
 # Offense count: 28
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
