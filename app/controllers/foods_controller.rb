@@ -22,8 +22,8 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     unless @food.valid?
       @point = Point.all
-      @food.errors.add(:point, 'Point select please.') unless params[:point].present?
-      @food.errors.add(:image, 'select please.') unless params[:image].present?
+      @food.errors.add(:point, 'Point select please.') if params[:point].blank?
+      @food.errors.add(:image, 'select please.') if params[:image].blank?
       render :new and return
     end
 

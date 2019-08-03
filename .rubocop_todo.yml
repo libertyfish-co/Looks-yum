@@ -30,13 +30,6 @@ Metrics/MethodLength:
   Max: 18
 
 # Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: NilOrEmpty, NotPresent, UnlessPresent.
-Rails/Blank:
-  Exclude:
-    - 'app/controllers/foods_controller.rb'
-
-# Offense count: 2
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
 Rails/HasManyOrHasOneDependent:
