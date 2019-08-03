@@ -96,12 +96,6 @@ Style/SymbolArray:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/UnneededInterpolation:
-  Exclude:
-    - 'spec/system/validation_spec.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
 # Configuration parameters: WordRegex.
 # SupportedStyles: percent, brackets
 Style/WordArray:
