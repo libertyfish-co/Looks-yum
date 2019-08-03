@@ -89,15 +89,6 @@ Style/Documentation:
     - 'db/migrate/20181116022530_create_favorites.rb'
     - 'db/migrate/20181116070232_create_food_points.rb'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'bin/rails'
-    - 'bin/rake'
-    - 'bin/rspec'
-    - 'spec/rails_helper.rb'
-
 # Offense count: 2
 Style/MixinUsage:
   Exclude:
