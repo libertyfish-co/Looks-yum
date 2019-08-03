@@ -73,14 +73,6 @@ Style/Documentation:
     - 'db/migrate/20181116022530_create_favorites.rb'
     - 'db/migrate/20181116070232_create_food_points.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'Guardfile'
-    - 'spec/system/validation_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/RedundantBegin:
