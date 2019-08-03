@@ -262,30 +262,6 @@ Style/StderrPuts:
   Exclude:
     - 'bin/yarn'
 
-# Offense count: 122
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'Guardfile'
-    - 'app/controllers/foods_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'bin/spring'
-    - 'bin/yarn'
-    - 'config/application.rb'
-    - 'config/environments/production.rb'
-    - 'config/initializers/omniauth_facebook.rb'
-    - 'config/puma.rb'
-    - 'db/migrate/20190109055009_create_active_storage_tables.active_storage.rb'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-    - 'spec/rails_helper.rb'
-    - 'spec/system/favorites_spec.rb'
-    - 'spec/system/top_spec.rb'
-    - 'spec/system/validation_spec.rb'
-    - 'test/application_system_test_case.rb'
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize.

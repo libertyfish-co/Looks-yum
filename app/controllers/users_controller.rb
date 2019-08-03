@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def auth_done
-    user_name = "Test"
+    user_name = 'Test'
 
     # find_or_create_byメソッドが使える
     user = User.find_by(name: user_name) || User.create(name: user_name)

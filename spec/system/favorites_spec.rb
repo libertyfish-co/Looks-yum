@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Favorites', type: :system do
   before do
     Rails.application.env_config['omniauth.auth'] = facebook_mock('tester')
-    @food = Food.create(name: "テスト野菜", description: "テスト野菜の説明")
-    @food.image.attach(io: File.open("spec/fixtures/cabbage.jpg"), filename: 'cabbage.jpg')
+    @food = Food.create(name: 'テスト野菜', description: 'テスト野菜の説明')
+    @food.image.attach(io: File.open('spec/fixtures/cabbage.jpg'), filename: 'cabbage.jpg')
   end
 
   context 'クリックでお気に入り登録/解除の切り替えが出来ること' do

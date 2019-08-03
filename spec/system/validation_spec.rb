@@ -11,9 +11,9 @@ RSpec.describe 'validation test', type: :system do
       end
 
       it '11文字以上の場合' do
-        text = ""
+        text = ''
         11.times do
-          text << "a"
+          text << 'a'
         end
         visit 'foods/new'
         fill_in 'food[name]', with: "#{text}"
@@ -55,9 +55,9 @@ RSpec.describe 'validation test', type: :system do
       end
 
       it '301文字以上の場合' do
-        text = ""
+        text = ''
         301.times do
-          text << "a"
+          text << 'a'
         end
         visit 'foods/new'
         fill_in 'food[description]', with: "#{text}"
