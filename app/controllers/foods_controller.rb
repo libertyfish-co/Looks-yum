@@ -40,6 +40,7 @@ class FoodsController < ApplicationController
   end
 
   private
+
   def food_params
     params.require(:food).permit(:name, :description, :image)
   end
