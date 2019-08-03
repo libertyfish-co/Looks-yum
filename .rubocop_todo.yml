@@ -45,14 +45,6 @@ Style/AndOr:
   Exclude:
     - 'app/controllers/foods_controller.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/test_helper.rb'
-
 # Offense count: 22
 Style/Documentation:
   Exclude:
