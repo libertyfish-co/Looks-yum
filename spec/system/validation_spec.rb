@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'validation test', type: :system do
@@ -13,7 +15,7 @@ RSpec.describe 'validation test', type: :system do
       it '11文字以上の場合' do
         text = ''
         11.times do
-          text << 'a'
+          text += 'a'
         end
         visit 'foods/new'
         fill_in 'food[name]', with: "#{text}"
@@ -57,7 +59,7 @@ RSpec.describe 'validation test', type: :system do
       it '301文字以上の場合' do
         text = ''
         301.times do
-          text << 'a'
+          text += 'a'
         end
         visit 'foods/new'
         fill_in 'food[description]', with: "#{text}"

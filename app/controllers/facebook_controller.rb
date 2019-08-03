@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FacebookController < ApplicationController
   def auth_done
     auth = request.env['omniauth.auth']
