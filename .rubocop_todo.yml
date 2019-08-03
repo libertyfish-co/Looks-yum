@@ -14,13 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth-facebook.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AllowInHeredoc.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'db/migrate/20181116022530_create_favorites.rb'
-
 # Offense count: 2
 Metrics/AbcSize:
   Max: 32
