@@ -137,17 +137,6 @@ Style/AndOr:
   Exclude:
     - 'app/controllers/foods_controller.rb'
 
-# Offense count: 27
-# Configuration parameters: AllowedChars.
-Style/AsciiComments:
-  Exclude:
-    - 'app/controllers/facebook_controller.rb'
-    - 'app/controllers/foods_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'config/application.rb'
-    - 'db/seeds.rb'
-    - 'spec/models/foods_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/BlockComments:
