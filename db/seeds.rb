@@ -46,5 +46,5 @@ points_seed_data.each do |point|
 end
 
 12.times do |num|
-    Point.create(point: "#{num + 1}月")
+  Point.create(point: "#{num + 1}月")
 end

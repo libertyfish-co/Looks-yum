@@ -1,6 +1,6 @@
 class FoodPoint < ApplicationRecord
-    belongs_to :point
-    belongs_to :food
+  belongs_to :point
+  belongs_to :food
 
-    validates :food_id, :point_id, presence: true
+  validates :food_id, :point_id, presence: true
 end

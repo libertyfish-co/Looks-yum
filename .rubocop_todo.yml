@@ -14,20 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth-facebook.rb'
 
-# Offense count: 28
-# Cop supports --auto-correct.
-# Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'app/controllers/favorites_controller.rb'
-    - 'app/controllers/foods_controller.rb'
-    - 'app/models/favorite.rb'
-    - 'app/models/food.rb'
-    - 'app/models/food_point.rb'
-    - 'app/models/point.rb'
-    - 'app/models/user.rb'
-    - 'db/seeds.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment.
