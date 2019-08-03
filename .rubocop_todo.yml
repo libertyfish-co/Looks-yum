@@ -16,15 +16,6 @@ Layout/AlignArguments:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideBlockBraces:
-  Exclude:
-    - 'app/controllers/foods_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: AllowInHeredoc.
 Layout/TrailingWhitespace:
   Exclude:

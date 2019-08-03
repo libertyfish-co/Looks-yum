@@ -26,7 +26,7 @@ class FoodsController < ApplicationController
     end
 
     submit_point_id = []
-    params[:point].map { |id| submit_point_id << id[:id].to_i}
+    params[:point].map { |id| submit_point_id << id[:id].to_i }
     if @food.save
       # pointテーブルへ登録
       submit_point_id.each do |point_id|
