@@ -14,15 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth-facebook.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceBeforeBlockBraces:
-  Exclude:
-    - 'app/controllers/foods_controller.rb'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
