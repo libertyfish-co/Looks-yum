@@ -31,7 +31,7 @@ RSpec.describe 'NewKonwledge', type: :system do
         find('div.row div.point_list:nth-child(2)').click
         find('div.row div.point_list:nth-child(3)').click
         fill_in 'food[description]', with: 'テスト野菜の説明'
-        attach_file 'food[image]', "#{Rails.root}/spec/fixtures/cabbage.jpg"
+        attach_file 'food[image]', Rails.root.join('spec', 'fixtures', 'cabbage.jpg')
         click_on 'submit'
         text = page.driver.browser.switch_to.alert.text
         expect(text).to eq 'テスト野菜を登録しました'

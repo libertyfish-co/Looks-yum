@@ -36,13 +36,6 @@ Rails/Blank:
   Exclude:
     - 'app/controllers/foods_controller.rb'
 
-# Offense count: 1
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: slashes, arguments
-Rails/FilePath:
-  Exclude:
-    - 'spec/system/new_knowledge_spec.rb'
-
 # Offense count: 2
 # Configuration parameters: Include.
 # Include: app/models/**/*.rb
