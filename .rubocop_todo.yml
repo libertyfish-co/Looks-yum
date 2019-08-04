@@ -81,12 +81,6 @@ Style/RegexpLiteral:
   Exclude:
     - 'Guardfile'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/StderrPuts:
-  Exclude:
-    - 'bin/yarn'
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize.
