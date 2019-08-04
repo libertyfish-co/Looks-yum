@@ -14,3 +14,9 @@ AllCops:
 # マルチバイトのコメントを許可する
 Style/AsciiComments:
   Enabled: false
+
+# ブロックの長さ
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+    - spec/**/*
