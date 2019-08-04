@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
       @point = Point.all
       @food.errors.add(:point, 'Point select please.') if params[:point].blank?
       @food.errors.add(:image, 'select please.') if params[:image].blank?
-      render :new and return
+      render(:new) && return
     end
 
     submit_point_id = []

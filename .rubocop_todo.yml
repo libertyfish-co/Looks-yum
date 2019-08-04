@@ -37,14 +37,6 @@ Rails/HasManyOrHasOneDependent:
     - 'app/models/food.rb'
     - 'app/models/user.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, conditionals
-Style/AndOr:
-  Exclude:
-    - 'app/controllers/foods_controller.rb'
-
 # Offense count: 22
 Style/Documentation:
   Exclude:
