@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# お気に入りクラス
 class Favorite < ApplicationRecord
   belongs_to :user
   belongs_to :food

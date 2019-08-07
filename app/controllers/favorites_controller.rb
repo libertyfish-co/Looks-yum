@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# お気に入りコントローラー
 class FavoritesController < ApplicationController
   before_action :find_favorite
 

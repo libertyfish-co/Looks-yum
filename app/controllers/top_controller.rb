@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# トップページコントローラー
 class TopController < ApplicationController
   def index
     @search = Food.ransack params[:q]

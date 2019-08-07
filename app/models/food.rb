@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# 食材クラス
 class Food < ApplicationRecord
   has_many :food_points, dependent: :destroy
   has_many :points, through: :food_points, dependent: :destroy

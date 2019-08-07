@@ -20,3 +20,8 @@ Metrics/BlockLength:
   Exclude:
     - Guardfile
     - spec/**/*
+
+# Document 記述
+Style/Documentation:
+  Exclude:
+    - db/migrate/**/*
