@@ -14,10 +14,6 @@ Layout/AlignArguments:
   Exclude:
     - 'config/initializers/omniauth_facebook.rb'
 
-# Offense count: 2
-Metrics/AbcSize:
-  Max: 32
-
 # Offense count: 22
 Style/Documentation:
   Exclude:

@@ -16,7 +16,7 @@ class FoodsController < ApplicationController
     @point = Point.all
   end
 
-  def create # rubocop:disable Metrics/MethodLength
+  def create # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     @food = Food.new(food_params)
     unless @food.valid?
       @point = Point.all
