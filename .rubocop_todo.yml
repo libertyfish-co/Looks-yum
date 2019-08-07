@@ -18,11 +18,6 @@ Layout/AlignArguments:
 Metrics/AbcSize:
   Max: 32
 
-# Offense count: 2
-# Configuration parameters: CountComments, ExcludedMethods.
-Metrics/MethodLength:
-  Max: 18
-
 # Offense count: 22
 Style/Documentation:
   Exclude:
