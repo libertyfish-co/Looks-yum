@@ -6,7 +6,9 @@ class FoodsController < ApplicationController
     @result = @search.result
 
     redirect_to root_path if @result.blank?
-    @users_favorite = Favorite.where(user_id: session[:user_id]) if session[:user_id]
+    return unless session[:user_id]
+
+    @users_favorite = Favorite.where(user_id: session[:user_id])
   end
 
   def new

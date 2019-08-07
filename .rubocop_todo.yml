@@ -58,10 +58,3 @@ Style/Documentation:
 Style/WordArray:
   EnforcedStyle: percent
   MinSize: 17
-
-# Offense count: 57
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 144

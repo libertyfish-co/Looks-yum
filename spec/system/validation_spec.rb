@@ -21,7 +21,9 @@ RSpec.describe 'validation test', type: :system do
         fill_in 'food[name]', with: text
         click_on 'submit'
 
-        expect(page).to have_content 'Name is too long (maximum is 10 characters)'
+        expect(page).to have_content(
+          'Name is too long (maximum is 10 characters)'
+        )
       end
     end
 
@@ -65,7 +67,9 @@ RSpec.describe 'validation test', type: :system do
         fill_in 'food[description]', with: text
         click_on 'submit'
 
-        expect(page).to have_content 'Description is too long (maximum is 300 characters)'
+        expect(page).to have_content(
+          'Description is too long (maximum is 300 characters)'
+        )
       end
     end
 
