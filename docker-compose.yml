@@ -14,12 +14,22 @@ services:
       - db
     tty: true
     stdin_open: true
+
   db:
     image: mysql:5.7
     volumes:
       - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+
+  chrome:
+    image: selenium/standalone-chrome:3.141.59
+    volumes:
+      - .:/app
+      - ./tmp/screenshots:/dev/shm
+    ports:
+      - 4444:4444
+
 volumes:
   db-volume:
   bundle:

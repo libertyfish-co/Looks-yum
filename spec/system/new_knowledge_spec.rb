@@ -22,7 +22,7 @@ RSpec.describe 'NewKonwledge', type: :system do
       end
     end
 
-    describe 'submit test' do
+    describe 'submit test', js: true do
       it 'foods/new' do
         visit 'auth/facebook'
         click_on 'New Knowledge'
