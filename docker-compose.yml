@@ -27,8 +27,6 @@ services:
     volumes:
       - .:/app
       - ./tmp/screenshots:/dev/shm
-    ports:
-      - 4444:4444
 
 volumes:
   db-volume:
