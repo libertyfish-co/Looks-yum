@@ -73,7 +73,7 @@ RSpec.describe 'validation test', type: :system do
         visit 'foods/new'
         click_on 'submit'
 
-        expect(page).to have_content 'Image select please.'
+        expect(page).to have_content %w(Image can't be blank)
       end
     end
   end
