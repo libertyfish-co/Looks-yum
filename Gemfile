@@ -50,6 +50,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
   gem 'guard-rspec', require: false
+  gem 'guard-rubocop', require: false
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
