@@ -111,7 +111,7 @@
     <div class="points_part" style="text-align: left">points</div>
     <div class="error_messages" style="text-align: left;"><%= @food.errors.full_messages_for(:points).inject %></div>
     <div class="row" style="margin-right: 15px; margin-left: 15px;">
-    <% @point.each_with_index do |point, index| %>
+    <% @points.each_with_index do |point, index| %>
         <div class="point_list col-sm-4">
           <div class="point" style="margin-bottom: 5px; margin-top: 5px; margin-left: -10px; margin-right: -10px;" id="<%= point.id %>"><%= point.point %></div>
         </div>

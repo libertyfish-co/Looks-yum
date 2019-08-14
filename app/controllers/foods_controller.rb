@@ -2,6 +2,8 @@
 
 # 食材コントローラー
 class FoodsController < ApplicationController
+  before_action -> { @points = Point.all }, only: %i[new create]
+
   def index
     @search = Food.ransack params[:q]
     @result = @search.result
@@ -14,13 +16,11 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
-    @point = Point.all
   end
 
   def create
     @food = Food.new(food_params)
     unless @food.valid?
-      @point = Point.all
       @food.errors.add(:point, 'select please.') if params[:point].blank?
       render(:new) && return
     end
