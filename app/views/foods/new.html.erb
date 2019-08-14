@@ -109,7 +109,7 @@
   </div>
   <div class="container" style="text-align: center; margin-top: 10px;">
     <div class="points_part" style="text-align: left">points</div>
-    <div class="error_messages" style="text-align: left;"><%= @food.errors[:point].inject %></div>
+    <div class="error_messages" style="text-align: left;"><%= @food.errors.full_messages_for(:points).inject %></div>
     <div class="row" style="margin-right: 15px; margin-left: 15px;">
     <% @point.each_with_index do |point, index| %>
         <div class="point_list col-sm-4">
