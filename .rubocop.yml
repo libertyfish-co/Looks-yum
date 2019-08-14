@@ -1,7 +1,5 @@
 require: rubocop-rails
 
-inherit_from: .rubocop_todo.yml
-
 # 自動生成されるファイルはチェック対象から除外
 AllCops:
   Exclude:
