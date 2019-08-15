@@ -1,20 +1,36 @@
 # frozen_string_literal: true
 
-# require 'rails_helper'
-#
-# RSpec.describe Food, type: :model do
-#   # pending "add some examples to (or delete) #{__FILE__}"
-#   before do
-#     3.times do |mun|
-#       Point.create(point: "point_#{mun + 1}")
-#     end
-#     @point = Point.all
-#   end
-#
-#   it 'Food' do
-#     @food = Food.create(name: 'テスト', description: 'テストの説明')
-#     # @food << @point
-#     @food.image.attach(io: File.open("spec/fixtures/cabbage.jpg"),
-#                        filename: 'cabbage.jpg')
-#   end
-# end
+require 'rails_helper'
+
+RSpec.describe Food, type: :model do
+  describe '.build' do
+    subject { described_class.build(food_params, point_ids) }
+
+    let(:food_params) do
+      { name: 'name', description: 'description', image: image }
+    end
+    let(:image) do
+      fixture_file_upload(
+        Rails.root.join('spec', 'fixtures', 'cabbage.jpg'), 'image/jpeg'
+      )
+    end
+    let(:points) { create_list(:point, 2) }
+    let(:point_ids) { points.pluck(:id) }
+
+    it 'Food が 引数 food_params の値で作成される' do
+      expect(subject.name).to eq food_params[:name]
+      expect(subject.description).to eq food_params[:description]
+
+      expect(subject.image).to be_attached
+      expect(subject.image.filename).to eq image.original_filename
+    end
+
+    it 'Food.points が 引数 point_ids の値で関連付けされる' do
+      expect(subject.points).to match_array points
+    end
+
+    it 'Food は未登録' do
+      expect { subject }.to change(Food, :count).by(0)
+    end
+  end
+end

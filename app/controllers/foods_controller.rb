@@ -19,19 +19,14 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
+    point_ids = (params[:point] || []).map { |point| point[:id] }
+    @food = Food.build(food_params, point_ids)
     unless @food.valid?
       @food.errors.add(:point, 'select please.') if params[:point].blank?
       render(:new) && return
     end
 
-    submit_point_id = []
-    params[:point].map { |id| submit_point_id << id[:id].to_i }
     if @food.save
-      # pointテーブルへ登録
-      submit_point_id.each do |point_id|
-        FoodPoint.create(food_id: @food.id, point_id: point_id)
-      end
       flash[:notice] = "#{@food.name}を登録しました"
       redirect_to foods_path
     else
