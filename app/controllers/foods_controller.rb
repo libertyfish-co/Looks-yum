@@ -21,15 +21,12 @@ class FoodsController < ApplicationController
   def create
     point_ids = (params[:point] || []).map { |point| point[:id] }
     @food = Food.build(food_params, point_ids)
-    unless @food.valid?
-      render(:new) && return
-    end
 
     if @food.save
       flash[:notice] = "#{@food.name}を登録しました"
       redirect_to foods_path
     else
-      redirect_to new_food_path
+      render :new
     end
   end
 
