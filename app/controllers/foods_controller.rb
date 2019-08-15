@@ -22,7 +22,6 @@ class FoodsController < ApplicationController
     point_ids = (params[:point] || []).map { |point| point[:id] }
     @food = Food.build(food_params, point_ids)
     unless @food.valid?
-      @food.errors.add(:point, 'select please.') if params[:point].blank?
       render(:new) && return
     end
 

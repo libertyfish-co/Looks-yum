@@ -8,7 +8,7 @@ class Food < ApplicationRecord
   has_one_attached :image
 
   validates :name, :description, presence: true
-  # validates :points, presence: true
+  validates :points, presence: { message: 'select please' }
 
   validates :image, attached: true
 
