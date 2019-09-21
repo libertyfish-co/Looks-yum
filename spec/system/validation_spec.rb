@@ -24,7 +24,7 @@ RSpec.describe 'validation test', type: :system do
       end
     end
 
-    describe 'point選択時' do
+    describe 'point選択時', js: true do
       it '何も選択しなかった場合' do
         visit 'foods/new'
         click_on 'submit'

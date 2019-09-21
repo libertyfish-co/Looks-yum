@@ -7,7 +7,7 @@ RSpec.describe 'Favorites', type: :system do
     @food.image.attach(io: File.open("spec/fixtures/cabbage.jpg"), filename: 'cabbage.jpg')
   end
 
-  context 'クリックでお気に入り登録/解除の切り替えが出来ること' do
+  context 'クリックでお気に入り登録/解除の切り替えが出来ること', js: true do
     it 'お気に入り登録/解除' do
       visit '/auth/facebook'
       visit foods_path
