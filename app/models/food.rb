@@ -7,6 +7,8 @@ class Food < ApplicationRecord
     validates :name, :description, presence: true
     # validates :points, presence: true
 
+    validates :image, attached: true
+
     validates :name, length: { maximum: 10 }
     validates :description, length: { maximum: 300 }
     validates :points, length: { maximum: 3, minmum: 1 }
