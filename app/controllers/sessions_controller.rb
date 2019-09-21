@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# セッションコントローラー
 class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil

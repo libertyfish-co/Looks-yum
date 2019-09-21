@@ -1,0 +1,25 @@
+require: rubocop-rails
+
+# 自動生成されるファイルはチェック対象から除外
+AllCops:
+  Exclude:
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - db/schema.rb
+
+# マルチバイトのコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# ブロックの長さ
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+    - spec/**/*
+
+# Document 記述
+Style/Documentation:
+  Exclude:
+    - db/migrate/**/*

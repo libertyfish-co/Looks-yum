@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'rails_helper'
 #
 # RSpec.describe Food, type: :model do
@@ -12,6 +14,7 @@
 #   it 'Food' do
 #     @food = Food.create(name: 'テスト', description: 'テストの説明')
 #     # @food << @point
-#     @food.image.attach(io: File.open("spec/fixtures/cabbage.jpg"), filename: 'cabbage.jpg')
+#     @food.image.attach(io: File.open("spec/fixtures/cabbage.jpg"),
+#                        filename: 'cabbage.jpg')
 #   end
 # end

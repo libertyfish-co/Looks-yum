@@ -1,18 +1,23 @@
+# frozen_string_literal: true
+
+# お気に入りコントローラー
 class FavoritesController < ApplicationController
-    def create
-      unless find_favorite
-        Favorite.create(user_id: session[:user_id], food_id: params[:id])
-      end
-    end
+  before_action :find_favorite
 
-    def destroy
-      favorite = Favorite.find_by(user_id: session[:user_id], food_id: params[:id])
-      favorite.destroy
-    end
+  def create
+    return if @favorite
 
-    private
+    Favorite.create(user_id: session[:user_id], food_id: params[:id])
+  end
 
-    def find_favorite
-      @find_favorite = Favorite.find_by(user_id: session[:user_id], food_id: params[:id])
-    end
+  def destroy
+    @favorite.destroy
+  end
+
+  private
+
+  def find_favorite
+    @favorite = Favorite.find_by(user_id: session[:user_id],
+                                 food_id: params[:id])
+  end
 end

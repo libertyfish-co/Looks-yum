@@ -1,26 +1,29 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'validation test', type: :system do
-
   context '野菜登録時バリデーションエラーメッセージが表示されること' do
     describe 'name入力フォーム' do
       it '空の場合' do
         visit 'foods/new'
         click_on 'submit'
 
-        expect(page).to have_content %[Name can't be blank]
+        expect(page).to have_content %(Name can't be blank)
       end
 
       it '11文字以上の場合' do
-        text = ""
+        text = ''
         11.times do
-          text << "a"
+          text += 'a'
         end
         visit 'foods/new'
-        fill_in 'food[name]', with: "#{text}"
+        fill_in 'food[name]', with: text
         click_on 'submit'
 
-        expect(page).to have_content 'Name is too long (maximum is 10 characters)'
+        expect(page).to have_content(
+          'Name is too long (maximum is 10 characters)'
+        )
       end
     end
 
@@ -52,19 +55,21 @@ RSpec.describe 'validation test', type: :system do
         visit 'foods/new'
         click_on 'submit'
 
-        expect(page).to have_content %[Description can't be blank]
+        expect(page).to have_content %(Description can't be blank)
       end
 
       it '301文字以上の場合' do
-        text = ""
+        text = ''
         301.times do
-          text << "a"
+          text += 'a'
         end
         visit 'foods/new'
-        fill_in 'food[description]', with: "#{text}"
+        fill_in 'food[description]', with: text
         click_on 'submit'
 
-        expect(page).to have_content 'Description is too long (maximum is 300 characters)'
+        expect(page).to have_content(
+          'Description is too long (maximum is 300 characters)'
+        )
       end
     end
 

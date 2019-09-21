@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'TopPage', type: :system do
@@ -9,7 +11,7 @@ RSpec.describe 'TopPage', type: :system do
     before do
       @food = Food.create(name: 'テスト野菜', description: 'テスト野菜の説明')
       @food.image.attach(
-        io: File.open("spec/fixtures/cabbage.jpg"),
+        io: File.open('spec/fixtures/cabbage.jpg'),
         filename: 'cabbage.jpg'
       )
     end
