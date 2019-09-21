@@ -20,6 +20,40 @@ Things you may want to cover:
 
 * Deployment instructions
 
+* Docker
+
+  * コンテナイメージをビルド
+
+    ```
+    docker-compose build
+    ```
+
+  * Webコンテナ起動
+
+    ```
+    docker-compose up
+    ```
+
+    もし、デーモンで起動する場合は、 `-d` オプションを追加して実行します。
+
+    ```
+    docker-compose up -d
+    ```
+
+  * `gem` を追加インストール
+
+    ```
+    docker-compose build
+    # or
+    docker-compose run --rm web bundle install
+    ```
+
+  * テストを実行
+
+    ```
+    docker-compose run --rm web rspec
+    ```
+
 * ...
 
 2018/12/20 10:00

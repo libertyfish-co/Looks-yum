@@ -47,6 +47,10 @@ gem 'omniauth-facebook'
 gem 'rails-ujs'
 gem 'ransack'
 
+# Temporarily introduced up to Rails 6.1
+# Rails PR https://github.com/rails/rails/pull/35390
+gem 'active_storage_validations'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
