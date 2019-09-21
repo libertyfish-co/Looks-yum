@@ -29,3 +29,6 @@
 
 # Ignore Apple files
 .DS_Store
+
+# Ignore sqlite database files
+/db/*.sqlite3
