@@ -7,7 +7,7 @@ class Food < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_one_attached :image
 
-  validates :name, :description, presence: true
+  validates :name, presence: true
   # validates :points, presence: true
 
   validates :image, attached: true
