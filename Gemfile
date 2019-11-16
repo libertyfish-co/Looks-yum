@@ -46,6 +46,7 @@ gem 'omniauth-facebook'
 
 gem 'rails-ujs'
 gem 'ransack'
+gem 'rails-i18n'
 
 # Temporarily introduced up to Rails 6.1
 # Rails PR https://github.com/rails/rails/pull/35390
