@@ -21,7 +21,7 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     unless @food.valid?
       @point = Point.all
-      @food.errors.add(:point, 'Point select please.') if params[:point].blank?
+      @food.errors.add(:point, 'pointを選択してください') if params[:point].blank?
       render(:new) && return
     end
 
