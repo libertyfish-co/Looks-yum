@@ -51,13 +51,6 @@ RSpec.describe 'validation test', type: :system do
     end
 
     describe 'description入力フォーム' do
-      it '空の場合' do
-        visit 'foods/new'
-        click_on 'submit'
-
-        expect(page).to have_content %(Description can't be blank)
-      end
-
       it '301文字以上の場合' do
         text = ''
         301.times do
