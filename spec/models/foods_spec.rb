@@ -30,7 +30,7 @@ RSpec.describe Food, type: :model do
     end
 
     it 'Food は未登録' do
-      expect { subject }.to change(Food, :count).by(0)
+      expect { subject }.not_to change(Food, :count)
     end
   end
 end
