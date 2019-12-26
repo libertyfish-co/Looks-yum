@@ -7,8 +7,8 @@ class Food < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_one_attached :image
 
-  validates :name, :description, presence: true
-  validates :points, presence: { message: 'select please' }
+  validates :name, presence: true
+  validates :points, presence: { message: 'を選択してください' }
 
   validates :image, attached: true
 

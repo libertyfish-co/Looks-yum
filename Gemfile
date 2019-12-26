@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3', '>= 1.3.6'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,6 +46,7 @@ gem 'omniauth-facebook'
 
 gem 'rails-ujs'
 gem 'ransack'
+gem 'rails-i18n'
 
 # Temporarily introduced up to Rails 6.1
 # Rails PR https://github.com/rails/rails/pull/35390
