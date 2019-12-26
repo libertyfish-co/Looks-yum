@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
 
   def create
     point_ids = (params[:point] || []).map { |point| point[:id] }
-    @food = Food.build(food_params, point_ids)
+    @food = Food.build_from_params(food_params, point_ids)
 
     if @food.save
       flash[:notice] = "#{@food.name}を登録しました"

@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  describe '.build' do
-    subject { described_class.build(food_params, point_ids) }
+  describe '.build_from_params' do
+    subject { described_class.build_from_params(food_params, point_ids) }
 
     let(:food_params) do
       { name: 'name', description: 'description', image: image }

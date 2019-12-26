@@ -16,9 +16,9 @@ class Food < ApplicationRecord
   validates :description, length: { maximum: 300 }
   validates :points, length: { maximum: 3, minmum: 1 }
 
-  def self.build(food_params, point_ids)
+  def self.build_from_params(food_params, point_ids)
     food = Food.new(food_params)
-    (point_ids || []).each do |point_id|
+    point_ids.each do |point_id|
       food.points << Point.find(point_id)
     end
     food
