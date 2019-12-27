@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/favorite/:id', to: 'favorites#create', as: :favorites
   delete '/favorite/:id', to: 'favorites#destroy', as: :favorite
   get '/user', to: 'users#index'
-  get '/auth/facebook/callback', to: 'facebook#auth_done'
+  post '/auth/facebook/callback', to: 'facebook#auth_done'
   delete '/', to: 'sessions#destroy'
   get '/login', to: 'users#auth_done'
 end
