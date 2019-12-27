@@ -2,6 +2,8 @@
 
 # 食材コントローラー
 class FoodsController < ApplicationController
+  before_action -> { @points = Point.all }, only: %i[new create]
+
   def index
     @search = Food.ransack params[:q]
     @result = @search.result
@@ -14,28 +16,17 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
-    @point = Point.all
   end
 
-  def create # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
-    @food = Food.new(food_params)
-    unless @food.valid?
-      @point = Point.all
-      @food.errors.add(:point, 'pointを選択してください') if params[:point].blank?
-      render(:new) && return
-    end
+  def create
+    point_ids = (params[:point] || []).map { |point| point[:id] }
+    @food = Food.build_from_params(food_params, point_ids)
 
-    submit_point_id = []
-    params[:point].map { |id| submit_point_id << id[:id].to_i }
     if @food.save
-      # pointテーブルへ登録
-      submit_point_id.each do |point_id|
-        FoodPoint.create(food_id: @food.id, point_id: point_id)
-      end
       flash[:notice] = "#{@food.name}を登録しました"
       redirect_to foods_path
     else
-      redirect_to new_food_path
+      render :new
     end
   end
 

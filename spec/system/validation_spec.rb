@@ -32,7 +32,7 @@ RSpec.describe 'validation test', type: :system do
         visit 'foods/new'
         click_on 'submit'
 
-        expect(page).to have_content 'Point select please.'
+        expect(page).to have_content 'Points select please'
       end
 
       it '4つ目を選択した場合' do
@@ -71,7 +71,7 @@ RSpec.describe 'validation test', type: :system do
         visit 'foods/new'
         click_on 'submit'
 
-        expect(page).to have_content %w(Image can't be blank)
+        expect(page).to have_content %(Image can't be blank)
       end
     end
   end
