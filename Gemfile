@@ -43,6 +43,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'rails-ujs'
 gem 'ransack'
